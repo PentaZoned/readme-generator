@@ -1,0 +1,27 @@
+const fs = require('fs');
+const inquirer = require('inquirer');
+
+inquirer
+    .prompt([ 
+        {
+            type: 'input',
+            message: "What is your name of your project?",
+            name: 'projectName',
+        },
+        {
+            type: 'input',
+            message: "Please give a short description of your project.",
+            name: 'projectDesc',
+        },
+        {
+            type: 'input',
+            message: "What are the installation steps?",
+            name: 'installSteps',
+        },
+        {
+            type: 'checkbox',
+            message: "What are the technologies used?",
+            choices: ["HTML5", "CSS", "JavaScript", "jQuery"],
+            name: 'techUsed'
+        },
+    ])
