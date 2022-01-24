@@ -22,6 +22,13 @@ inquirer
             type: 'checkbox',
             message: "What are the technologies used?",
             choices: ["HTML5", "CSS", "JavaScript", "jQuery"],
-            name: 'techUsed'
+            name: 'techUsed',
         },
     ])
+    .then((data) => {
+        console.log(data);
+
+        fs.writeFile("README.md", JSON.stringify(data), (err) =>
+        err ? console.log(err) : console.log("Success!")
+        );
+    })
