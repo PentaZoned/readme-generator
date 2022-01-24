@@ -5,7 +5,7 @@ inquirer
     .prompt([ 
         {
             type: 'input',
-            message: "What is your name of your project?",
+            message: "What is your title of your project?",
             name: 'projectName',
         },
         {
@@ -19,14 +19,40 @@ inquirer
             name: 'installSteps',
         },
         {
+            type: 'input',
+            message: "What is the usage information?",
+            name: 'usageInfo',
+        },
+        {
+            type: 'input',
+            message: "What are the contribution guidelines?",
+            name: 'contribGuide',
+        },
+        {
+            type: 'input',
+            message: "What are the test instructions?",
+            name: 'testInstruct',
+        },
+        {
             type: 'checkbox',
-            message: "What are the technologies used?",
-            choices: ["HTML5", "CSS", "JavaScript", "jQuery"],
-            name: 'techUsed',
+            message: "Which licenses do you want to include?",
+            choices: ["MIT", "IBM", "ISC", "Mozilla"],
+            name: 'licenseList',
+        },
+        {
+            type: 'input',
+            message: "What is your Github username?",
+            name: 'githubUsername',
+        },
+        {
+            type: 'input',
+            message: "What is your contact email address?",
+            name: 'email',
         },
     ])
     .then((data) => {
         console.log(data);
+
 
         fs.writeFile("README.md", JSON.stringify(data), (err) =>
         err ? console.log(err) : console.log("Success!")
