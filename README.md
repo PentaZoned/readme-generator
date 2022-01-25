@@ -1,58 +1,42 @@
 # readme-generator
 
-One paragraph of project description goes here.
+This application generates a README.md by using user inputs, prompts, packages. There is no deployed link as this application is run within a terminal using `Node.js`. The user is able to view the generated README.md by opening them in a text editor such as VS Code.
+
+The user can run the generator by using the command `node index.js`.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+The user needs to install Node.js in order to utilize the commands to operate the application.
+Instructions on how to install can be found here: [Installing Node](https://nodejs.org/en/download/)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development environment running.
-
-Say what the step will be:
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
+When the user clones the repository to their machine, they have to redirect themselves into the assets folder where there is the index.js and package.JSON, and they have to run the command `npm install` or `npm install inquirer`. The command `npm install` is appropriate because the package.JSON has `inquirer` listed as a dependency. After this, the application is all set to be run.
 
 ## Built With
 
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Node.js](https://nodejs.org/en/docs/)
+* [Inquirer Package](https://www.npmjs.com/package/inquirer)
 
-## Deployed Link
+## Video Explanation & Demonstration
 
-* [See Live Site](#)
+There are two videos. The second video is the continuation of the first video.
 
+* [Video Demonstration 1](https://watch.screencastify.com/v/WJB0TACI2dHNYmp3XnNP)
+* [Video Demonstration 2](https://watch.screencastify.com/v/1C1MPvMC2DKamcOVJAMZ)
 
 ## Authors
 
-* **YOUR NAME** 
+* **Bradley Le** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- [Link to Portfolio Site](https://pentazoned.github.io/portfolio-v2/)
+- [Link to Github](https://github.com/PentaZoned)
+- [Link to LinkedIn](https://www.linkedin.com/in/bradley-le-/)
 
 ## License
 
