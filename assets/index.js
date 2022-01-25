@@ -55,77 +55,39 @@ inquirer
 
         var stringREADME = generateREADME(data);
 
-        fs.writeFile("README.md", JSON.stringify(stringREADME), (err) =>
+        fs.writeFile("README.md", stringREADME, (err) =>
         err ? console.log(err) : console.log("Success!")
         );
     })
 
 function generateREADME(data) {
-    var templateREADME = `# Template
+    var templateREADME = `# ${data.projectName}
 
-One paragraph of project description goes here.
+## Description
+
+${data.projectDesc}
     
 ## Getting Started
     
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Installation Steps
     
-### Prerequisites
-    
-What things you need to install the software and how to install them.
-    
-```
-Give examples
-```
-    
-### Installing
-    
-A step by step series of examples that tell you how to get a development environment running.
-    
-Say what the step will be:
-    
-```
-Give the example
-```
-    
-And repeat
-    
-```
-until finished
-```
-    
-End with an example of getting some data out of the system or using it for a little demo.
-    
-    
-## Built With
-    
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+${data.installSteps}
     
 ## Deployed Link
     
 * [See Live Site](#)
     
     
-## Authors
-    
-* **YOUR NAME** 
-    
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
-    
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-    
+## Questions
+
+- [Link to Github](https://github.com/${githubUsername})
+- [Contact Email]()
+      
 ## License
     
-This project is licensed under the MIT License 
-    
-## Acknowledgments
-    
-* Hat tip to anyone whose code, libraries, packages, or UI was used  / inspired from
-* Inspiration
-* etc`;
+This project is licensed under the MIT License`;
 
     return templateREADME;
 }
