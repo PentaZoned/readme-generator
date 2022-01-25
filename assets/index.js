@@ -83,7 +83,7 @@ ${data.installSteps}
 ## Questions
 
 - [Link to Github](https://github.com/${githubUsername})
-- [Contact Email]()
+- [Contact Email](mailto:${email})
       
 ## License
     
