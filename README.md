@@ -30,6 +30,12 @@ There are two videos. The second video is the continuation of the first video.
 * [Video Demonstration 1](https://watch.screencastify.com/v/WJB0TACI2dHNYmp3XnNP)
 * [Video Demonstration 2](https://watch.screencastify.com/v/1C1MPvMC2DKamcOVJAMZ)
 
+## Screenshot
+
+* [Screenshot of application being run](assets/Images/Screenshot1.jpg)
+
+The application prompts the user with input questions and checkbox. The answers are used to generate a README.md file. The console logged inputs are not of importance but rather for checking if the inputs are stored properly.
+
 ## Authors
 
 * **Bradley Le** 
