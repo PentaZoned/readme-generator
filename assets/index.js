@@ -37,7 +37,7 @@ inquirer
             type: 'checkbox',
             message: "Which licenses do you want to include?",
             choices: ["MIT", "IBM", "ISC", "Mozilla"],
-            name: 'licenseList',
+            name: 'license',
         },
         {
             type: 'input',
@@ -61,33 +61,52 @@ inquirer
     })
 
 function generateREADME(data) {
+
+    var licenseBadge;
+    switch(data.license) {
+        case 'MIT':
+            licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            break;
+        case 'IBM':
+            licenseBadge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+            break;
+        case 'ISC':
+            licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+            break;
+        case 'Mozilla':
+            licenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+            break;
+    };
+
     var templateREADME = `# ${data.projectName}
 
 ## Description
 
 ${data.projectDesc}
-    
-## Getting Started
-    
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Installation Steps
+${licenseBadge}
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+* [License](#license)
+    
+## Installation
     
 ${data.installSteps}
-    
-## Deployed Link
-    
-* [See Live Site](#)
-    
-    
+        
 ## Questions
 
-- [Link to Github](https://github.com/${githubUsername})
-- [Contact Email](mailto:${email})
+- [Link to Github](https://github.com/${data.githubUsername})
+- [Contact Email](mailto:${data.email})
       
 ## License
     
-This project is licensed under the MIT License`;
+This project is licensed under the ${data.license} License`;
 
     return templateREADME;
 }
