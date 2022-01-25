@@ -32,7 +32,7 @@ There are two videos. The second video is the continuation of the first video.
 
 ## Screenshot
 
-* [Screenshot of application being run](assets/Images/Screenshot1.jpg)
+* ![Screenshot of application being run](assets/Images/Screenshot1.jpg)
 
 The application prompts the user with input questions and checkbox. The answers are used to generate a README.md file. The console logged inputs are not of importance but rather for checking if the inputs are stored properly.
 
