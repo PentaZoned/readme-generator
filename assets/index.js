@@ -1,12 +1,14 @@
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 
 inquirer
+    // Prompts shown to users
     .prompt([ 
         {
-            type: 'input',
-            message: "What is your title of your project?",
-            name: 'projectName',
+            type: 'input',                                      // Type of input
+            message: "What is your title of your project?",     // Message or question displayed to the user
+            name: 'projectName',                                // Variable name
         },
         {
             type: 'input',
@@ -36,7 +38,7 @@ inquirer
         {
             type: 'checkbox',
             message: "Which licenses do you want to include?",
-            choices: ["MIT", "IBM", "ISC", "Mozilla"],
+            choices: ["MIT", "IBM", "ISC", "Mozilla"],          // An array of choices
             name: 'license',
         },
         {
@@ -50,32 +52,39 @@ inquirer
             name: 'email',
         },
     ])
-    .then((data) => {
+    .then((data) => {           // work to be done after the prompts have been answered
         console.log(data);
-
+        // a reference variables with a template literal from generateREADME() function
         var stringREADME = generateREADME(data);
 
+        // writes a new file called README.md and stores the contents of stringREADME into it
         fs.writeFile("README.md", stringREADME, (err) =>
+        // console.log error if unsuccessful, console.log success message otherwise
         err ? console.log(err) : console.log("Success!")
         );
     })
 
+// Function is used to generate the template literal with the user's information
 function generateREADME(data) {
 
+    // variable to hold code for the badge
     var licenseBadge;
+    // checks the license and assigns the code according to the license
+    // checks and assigns for MIT 
     if(data.license == 'MIT'){
         licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-
+    // checks and assigns for IBM 
     } else if (data.license == 'IBM') {
         licenseBadge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
-
+    // checks and assigns for ISC
     } else if (data.license == 'ISC') {
         licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
-
+    // checks and assigns for Mozilla
     } else {
         licenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
     };
 
+    // variable will hold the entire template literal
     var templateREADME = `# ${data.projectName}
 
 ## Description
@@ -120,5 +129,6 @@ ${data.contribGuide}
     
 This project is licensed under the ${data.license} License`;
 
+    // return the entire template literal
     return templateREADME;
 }
