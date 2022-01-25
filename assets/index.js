@@ -101,8 +101,6 @@ ${data.installSteps}
 
 ${data.usageInfo}
 
-![Example](assets/images/example.png)
-
 ## Tests
 
 ${data.testInstruct}
