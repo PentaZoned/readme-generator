@@ -63,19 +63,17 @@ inquirer
 function generateREADME(data) {
 
     var licenseBadge;
-    switch(data.license) {
-        case 'MIT':
-            licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-            break;
-        case 'IBM':
-            licenseBadge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
-            break;
-        case 'ISC':
-            licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
-            break;
-        case 'Mozilla':
-            licenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
-            break;
+    if(data.license === 'MIT'){
+        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+
+    } else if (data.license === 'IBM') {
+        licenseBadge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+
+    } else if (data.license === 'ISC') {
+        licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+
+    } else {
+        licenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
     };
 
     var templateREADME = `# ${data.projectName}
@@ -90,19 +88,31 @@ ${licenseBadge}
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
+* [Contributing](#contributing)
 * [License](#license)
     
 ## Installation
     
 ${data.installSteps}
         
+## Usage
+
+${data.usageInfo}
+
+## Tests
+
+${data.testInstruct}
+
 ## Questions
 
 - [Link to Github](https://github.com/${data.githubUsername})
 - [Contact Email](mailto:${data.email})
+
+## Contributing
+
+${data.contribGuide}
       
 ## License
     
