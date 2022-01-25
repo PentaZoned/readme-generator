@@ -63,13 +63,13 @@ inquirer
 function generateREADME(data) {
 
     var licenseBadge;
-    if(data.license === 'MIT'){
+    if(data.license == 'MIT'){
         licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
 
-    } else if (data.license === 'IBM') {
+    } else if (data.license == 'IBM') {
         licenseBadge = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
 
-    } else if (data.license === 'ISC') {
+    } else if (data.license == 'ISC') {
         licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
 
     } else {
@@ -100,6 +100,8 @@ ${data.installSteps}
 ## Usage
 
 ${data.usageInfo}
+
+![Example](assets/images/example.png)
 
 ## Tests
 
